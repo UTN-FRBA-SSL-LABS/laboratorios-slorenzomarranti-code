@@ -26,8 +26,14 @@ void test_agregar_uno(void) {
  *  PARTE A — Agregar el siguiente test (ver README.md, Parte 4)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* TODO: pegar aqui la funcion test_total_precio_unitario() */
-
+void test_total_precio_unitario(void) {
+    printf("\n[total: un producto, cantidad 1]\n");
+    Carrito c;
+    carrito_init(&c);
+    Producto p = {"Leche", 350, 1};
+    carrito_agregar(&c, p);
+    ASSERT_IGUAL(350, carrito_total(&c));
+}
 /* ═══════════════════════════════════════════════════════════════════════════
  *  PARTE B — Completar los blancos (ver README.md, Parte 5)
  * ═══════════════════════════════════════════════════════════════════════════ */
