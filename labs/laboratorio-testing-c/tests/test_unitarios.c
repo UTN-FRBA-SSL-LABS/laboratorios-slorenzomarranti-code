@@ -48,11 +48,21 @@ void test_total_precio_unitario(void) {
     ASSERT_IGUAL(700, carrito_total(&c));  /* <-- completar el valor esperado */
 }
 
+
 /* ═══════════════════════════════════════════════════════════════════════════
  *  PARTE C — Escribir un test propio (ver README.md, Parte 7)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* TODO: escribir test_carrito_lleno() */
+void test_carrito_lleno(void) {
+    printf("\n[carrito lleno]\n");
+    Carrito c;
+    carrito_init(&c);
+    Producto p = {"Leche", 350, 1};
+    for (int i = 0; i < MAX_ITEMS; i++) {
+        ASSERT_IGUAL(1, carrito_agregar(&c, p));   /* devuelve 1 = exito */
+    }
+    ASSERT_IGUAL(0, carrito_agregar(&c, p));   /* devuelve 0 = fallo */
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
  *  main
@@ -62,7 +72,9 @@ int main(void) {
     printf("=== Tests unitarios ===");
     test_carrito_nuevo();
     test_agregar_uno();
-    /* test_carrito_lleno();         */
+    test_total_precio_unitario();
+    test_total_con_cantidad();
+    test_carrito_lleno();         
     RESUMEN();
     return EXIT_CODE();
 }
