@@ -28,12 +28,20 @@ void test_compra_con_descuento(void) {
  *  PARTE E — Disenar un test propio (ver README.md, Parte 9)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* TODO: escribir test_agregar_hasta_llenar() */
+void test_agregar_hasta_llenar(void) {
+    Carrito c;
+    carrito_init(&c);
+    Producto p = {"Galletitas", 150, 1};
+    for (int i = 0; i < MAX_ITEMS; i++) {
+        ASSERT_IGUAL(1, carrito_agregar(&c, p));   /* devuelve 1 = exito */
+    }
+    ASSERT_IGUAL(0, carrito_agregar(&c, p));   /* devuelve 0 = fallo */
+}
 
 int main(void) {
     printf("=== Tests de integracion ===");
     test_compra_con_descuento();  
-    /* test_agregar_hasta_llenar();  */
+    test_agregar_hasta_llenar();  
     RESUMEN();
     return EXIT_CODE();
 }
