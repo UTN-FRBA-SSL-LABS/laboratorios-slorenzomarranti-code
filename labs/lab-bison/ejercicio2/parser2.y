@@ -15,7 +15,7 @@ void yyerror(const char *msg) { fprintf(stderr, "Error: %s\n", msg); }
 %union {
     int  int_val;
     char str_val[64];
-    
+}
 
 
 %token <int_val>  NUM    
