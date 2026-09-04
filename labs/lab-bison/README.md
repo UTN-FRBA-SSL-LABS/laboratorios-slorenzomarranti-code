@@ -1,6 +1,6 @@
 # Laboratorio: Introducción a Bison
 
-**Nombre:** ___________________________
+**Nombre:** Santiago Lorenzo
 
 ## Verificación y calificación
 
