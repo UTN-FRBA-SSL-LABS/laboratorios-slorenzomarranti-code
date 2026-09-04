@@ -224,7 +224,7 @@ Respondé cada pregunta reemplazando el espacio en blanco con la opción correct
 Opciones: `SHIFT` | `REDUCE` | `ERROR`
 
 ```
-P1=ERROR
+P1=SHIFT
 ```
 
 **P2** — ¿Las declaraciones `%left`/`%right` que aparecen **más abajo** en el archivo tienen mayor precedencia?
