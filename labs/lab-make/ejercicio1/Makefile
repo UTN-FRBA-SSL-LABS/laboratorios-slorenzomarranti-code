@@ -10,8 +10,7 @@ CC := gcc
 CFLAGS := -Wall
 
 # Regla principal: indica qué construir al ejecutar `make`
-all: $(PROGRAMA): suma.c
-	$(CC) $(CFLAGS) suma.c -o $(PROGRAMA)
+all: $(PROGRAMA)
 
 # Regla para generar el ejecutable a partir de suma.c
 # TODO 3: Completá el comando de compilación
@@ -24,6 +23,6 @@ $(PROGRAMA): suma.c
 # TODO 4: Completá el comando para eliminar el ejecutable
 #         Usá rm -f y la variable $(PROGRAMA)
 clean:
-	# rm -f $(PROGRAMA)
+	rm -f $(PROGRAMA)
 
 .PHONY: all clean
